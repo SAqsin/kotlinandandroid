@@ -33,8 +33,31 @@ fun main() {
     },"")
 
     reqemleEmeliyyat(5, ::toplaFun)
-
+    var list  = arrayListOf(1,2,34,5,67,7)
+    var net = yoxlaa(list)
+    println(net)
 }
+
+
+fun yoxlaa(list : ArrayList<Int>) : Boolean {
+    //ama forEachg inline funksiya olanda local return olur cunki kodu bura kopyalayir lambda olmur
+    itereteEden(list){
+        //not allowed here
+        //return false
+        when (it % 2){
+            1 -> return false  //inline oland aisleyir
+            0 -> return true  //inline oland aisleyir
+            else -> return false
+        }
+    }
+    return false
+}
+
+inline fun itereteEden(list: List<Int>, body : (Int)->Int) {
+    for(i in list) body(i)
+}
+
+
 
 var add = "Aqsin"
 fun getYas(): Int {
@@ -141,6 +164,8 @@ fun toplaFun(a : Int) : Int {
 fun doner(tekralanacaqDeyer: Int, vur: (Int) -> Int) : Int{
     return vur(tekralanacaqDeyer)
 }
+
+
 
 
 /**
