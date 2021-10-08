@@ -1,43 +1,58 @@
 package com.aqsin.interncourse.kotlin
 
 fun main(args: Array<String>) {
-    /*
-    var reng1 = Clr.GOY
-    var reng2 = Clr.valueOf("AG")
-    println(reng2 == Clr.AG)
-    var reng3 = enumValueOf<Clr>("SARI")
-    for (c in Clr.values()){
-        println("${c.name} - ${c.ordinal}")
-    }
-    for(c in enumValues<Clr>()){
-        println("${c.name} - ${c.ordinal}")
-    }
-    */
-    /*
-    var wC = Kolor.White
-    var wCode = wC.b
-    println(wCode)
-    println(wC.rgb())
-    println(wC.temp.name)
-    */
-    var ag = Reng.Red
-    //ag.temp = Temp.WARM private sete gore olmur
 
+//    var reng1 = Clr.GOY
+//    var reng2 = Clr.valueOf("AG")
+//    //enumlarin valueso
+//    println("$reng1 -> $reng2 -> ${Clr.QARA.name}")
+//    println(reng2 == Clr.AG)
+//    var reng3 = enumValueOf<Clr>("SARI")
+//    println(reng3)
+//
+//    //iterate elemek
+//    for (c in Clr.values()){
+//        println("${c.name} - ${c.ordinal}")
+//    }
+////    for(c in enumValues<Clr>()){
+////        println("${c.name} - ${c.ordinal}")
+////    }
+//
+//
+//    var wC = Kolor.White
+//    var wCode = wC.b
+//    println(wCode)
+//    println(wC.rgb())
+//    println(wC.temp.name)
+//    var ag = Reng.Red
+//    ag.temp = Temp.WARM private sete gore olmur
 
+   //var ag = Reng.Red
+  //ag.temp = Temp.WARM private sete gore olmur
+    var r = Kolor.Blue.r
+    println(BIZ.AQSIN)
+    println(BIZ.AQSIN.name)
+    println(BIZ.AQSIN.ordinal)
+    for(d  in BIZ.values()){
+        println(d)
+    }
+}
+
+/**
+ * enum class Adi {
+ *  DEYER1,DEYER2
+ * }
+ */
+
+enum class BIZ {
+    //0,  1     2
+    ATES,AQSIN, KERIM
 
 }
-class YY :A()
 
 enum class Clr {
     AG,QARA,GOY,SARI,YASIL
 }
-
-/**
- * Enum with constructor
- */
-/**
- * Enum abstract member and override
- */
 
 enum class Temp {
     WARM,
@@ -49,11 +64,10 @@ enum class Temp {
  */
 enum class Reng(val r: Int,val b : Int, val g : Int){
     White(255,0,0),
-    Blue(125,44,2),
+    Blue(125,44,231),
     Red(65,83,3),
     //Tund(251,26,600), //if argument  is not range 0..255 Illegal argumetn Exception
-    Yellow(2,135,65);
-
+    Yellow(2,135,123);
     var temp : Temp //= Temp.WARM
         private set
 
@@ -69,6 +83,8 @@ enum class Reng(val r: Int,val b : Int, val g : Int){
             else -> Temp.COLD
         }
     }
+
+
 
     fun rgb() = r shl 16 + b shl 8 + g
 }

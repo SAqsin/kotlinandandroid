@@ -1,7 +1,7 @@
 package com.aqsin.interncourse.kotlin
 
 
-class  Y : A()
+
 fun main(args: Array<String>) {
 
     var nd =  NonData()
@@ -89,3 +89,4 @@ class NonData{
 data class Data(var name:String, val year:Int){
     var age:Int = 8
 }
+
